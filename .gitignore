@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.xd
+*.sublime*
+node_modules/
+npm-debag.*
+source/css/*.css
+Thumbs.db

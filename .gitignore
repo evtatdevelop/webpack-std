@@ -9,4 +9,5 @@
 node_modules/
 npm-debag.*
 source/css/*.css
+dist/
 Thumbs.db

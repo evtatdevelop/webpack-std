@@ -1,4 +1,6 @@
 import component from './simple-components/dom';
+// import 'style-loader!css-loader!./theme/main.css';
+import './theme/main.css';
 
 const element = component();
 

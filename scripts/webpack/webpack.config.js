@@ -25,11 +25,18 @@ const output = {
 module.exports = () => {
 
   return {
-    entry: entry,
-    output: output,
     mode: 'none',
     devtool: false,
-
+    entry: entry,
+    output: output,
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ],
+        },
+      ],
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: './static/template.html',

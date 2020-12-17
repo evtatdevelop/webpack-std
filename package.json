@@ -4,7 +4,7 @@
   "description": "webpack learning",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config=./scripts/webpack/webpack.config.js",
+    "build": "node \"./scripts/webpack/build.js\"",
     "serve": "serve \"./dist\" -s"
   },
   "repository": {

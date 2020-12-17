@@ -11,7 +11,6 @@ const cleanOptions = {
   verbose: true,
   root: PROJECT_ROOT,
 };
-// const entry = './src/index.js';
 const entry = SOURCE_DIRECTORY;
 const output = {
   filename: 'bundle.js',

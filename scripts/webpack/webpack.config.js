@@ -1,19 +1,23 @@
+// const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
+const { BUILD_DIRECTORY, SOURCE_DIRECTORY, PROJECT_ROOT } = require('./constans');
 
-const delay = (timeout = 1000) =>
-  new Promise(resolve => setTimeout(resolve,timeout));
+// const delay = (timeout = 1000) =>
+//   new Promise(resolve => setTimeout(resolve,timeout));
 
 
 const cleanOptions = {
   verbose: true,
+  root: PROJECT_ROOT,
 };
-const entry = './src/index.js';
+// const entry = './src/index.js';
+const entry = SOURCE_DIRECTORY;
 const output = {
-  filename: 'main.js',
-  path: path.resolve(__dirname, 'dist'),
+  filename: 'bundle.js',
+  path: BUILD_DIRECTORY,
 }
+
 
 
 // module.exports = async () => {

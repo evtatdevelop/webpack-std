@@ -7,32 +7,61 @@ const chalk = require('chalk');
 // Config
 const getConfig = require('./webpack.config');
 
+// Utils
+const { choosePort } = require('./utils');
+
 // Constants
 const { HOST, PORT } = require('./constans');
 
 const compiler = webpack(getConfig());
 
-const server = new DevServer(compiler, {
-  host: HOST,
-  port: PORT,
-  historyApiFallback: true,
-  overlay: true,
-  quiet: true,
-  clientLogLevel: 'none',
-  noInfo: true,
-  after: (app) => {
-    app.use(
-      hot(compiler, {
-        log: false,
-      }),
-    );
-  },
-});
 
-server.listen(PORT, HOST, () => {
-  console.log(
-    `${chalk.greenBright('-> Serverlistening')} ${chalk.blueBright(
-      `http://${HOST}:${PORT}`,
-    )}`,
-  );
-});
+
+(async () => {
+  try {
+    const choosenPort = await choosePort(PORT);
+
+    if (!choosenPort) {
+      console.log(
+        chalk.yellowBright('-> It\'s impossible to run the app :('),
+      );
+      return null;
+    }
+
+    const server = new DevServer(compiler, {
+      host: HOST,
+      port: choosenPort,
+      historyApiFallback: true,
+      overlay: true,
+      quiet: true,
+      clientLogLevel: 'none',
+      noInfo: true,
+      after: (app) => {
+        app.use(
+          hot(compiler, {
+            log: false,
+          }),
+        );
+      },
+    });
+
+    server.listen(choosenPort, HOST, () => {
+      console.log(
+        `${chalk.greenBright('-> Serverlistening')} ${chalk.blueBright(
+          `http://${HOST}:${choosenPort}`,
+        )}`,
+      );
+    });
+
+  } catch (error) {
+    console.log(chalk.redBright('-> Error!'));
+    console.error(error.message || error);
+  }
+
+
+
+})();
+
+
+
+

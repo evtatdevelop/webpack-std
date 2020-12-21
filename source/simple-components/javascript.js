@@ -13,6 +13,10 @@ kind = 'Homo sapiens';
   sayAge() {
     console.log('Age', this.age);
   }
+
+  sayKind = () => {
+    console.log('Kind', this.kind);
+  };
 }
 
 const gendalf = new Human('Gendalf', 666);

@@ -17,6 +17,12 @@ module.exports = () => {
     module: {
       rules: [
         {
+          test: /\.js$/,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
+        {
           // TODO: Upgrade style loading
           test: /\.css$/,
           use: [ 'style-loader', 'css-loader' ],

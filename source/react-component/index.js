@@ -9,7 +9,7 @@ import Styles from './postcss.css';
 const Clicker = hot(module)(
   class extends Component {
     state = {
-      count: 0,
+      count: 34,
     };
 
     inc = () =>
@@ -26,7 +26,13 @@ const Clicker = hot(module)(
       const { count } = this.state;
 
       return (
-        <section className={Styles.clicker}>
+        <section
+          className={Styles.clicker}
+          style = {{
+             '--mainColor': 'rebeccapurple',
+             '--headingFontSize': this.state.count + 'px',
+          }}
+        >
           <h1>Count: {count}</h1>
           <button onClick = { this.inc }>Increment</button>
           <button onClick = { this.dec }>Decrement</button>

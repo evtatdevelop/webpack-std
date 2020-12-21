@@ -1,6 +1,11 @@
 .clicker {
   --mainColor: wheat;
+  --headingFontSize: 34px;
   color: var(--mainColor);
+
+  & h1 {
+    font-size: var(--headingFontSize);
+  }
 
   & button {
     height: 30px;
@@ -12,4 +17,9 @@
     cursor: pointer;
     outline: 0;
   }
+
+  @media (--phonePortrait) {
+    color: red;
+  }
+
 }

@@ -12,7 +12,7 @@ module.exports = (api) => {
 
   return {
     presets: [
-      [ '@babel/react' ],
+      '@babel/preset-react',
       [ '@babel/env',
         {
           debug: false,

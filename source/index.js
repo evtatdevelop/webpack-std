@@ -21,4 +21,4 @@
 // import './simple-components/javascript';
 
 
-// import './react-component';
+import './react-component';

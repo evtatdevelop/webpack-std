@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const DevServer = require('webpack-dev-server');
 const hot = require('webpack-hot-middleware');
 const chalk = require('chalk');
+const openBrowser = require('react-dev-utils/openBrowser');
 
 // Config
 const getDevConfig = require('./config/webpack.dev');
@@ -47,10 +48,11 @@ const compiler = webpack(getDevConfig());
 
     server.listen(choosenPort, HOST, () => {
       console.log(
-        `${chalk.greenBright('-> Serverlistening')} ${chalk.blueBright(
-          `http://${HOST}:${choosenPort}`,
-        )}`,
+        `${chalk.greenBright(
+          '-> Serverlistening')} ${chalk.blueBright(
+          `http://${HOST}:${choosenPort}`)}`,
       );
+      openBrowser(`http://${HOST}:${choosenPort}`);
     });
 
   } catch (error) {

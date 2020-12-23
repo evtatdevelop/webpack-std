@@ -20,6 +20,7 @@ module.exports = () => {
       rules: [
         {
           test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
           },
@@ -33,8 +34,7 @@ module.exports = () => {
               loader: 'css-loader',
               options: {
                 modules: true,
-                // localIdentName:
-                //   '[path][name]__[local]--[hash:base64:5]',
+                // localIdentName: '[path][name]__[local]--[hash:base64:5]'
               },
             },
             {

@@ -5,10 +5,10 @@ module.exports = (api) => {
 
   api.cache.never();
 
-  // const plugins = ['@babel/proposal-class-properties'];
-  // if (env === 'development') {
-  //   plugins.push('react-hot-loader/babel');
-  // }
+  const plugins = ['@babel/proposal-class-properties'];
+  if (env === 'development') {
+    plugins.push('react-hot-loader/babel');
+  }
 
   return {
     presets: [
@@ -22,7 +22,8 @@ module.exports = (api) => {
         },
       ],
     ],
-    plugins: ['@babel/proposal-class-properties'],
-    // plugins: plugins,
+    // plugins: ['@babel/proposal-class-properties'],
+    plugins: plugins,
+    // plugins,
   };
 };

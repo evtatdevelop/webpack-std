@@ -1,7 +1,7 @@
 // // Core
 // import React, { Component } from 'react';
 // import { render } from 'react-dom';
-// import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 
 Styles
 import Styles from './postcss.css';
@@ -63,6 +63,9 @@ import ReactDOM from 'react-dom';
 //   document.getElementById('app')
 // );
 
+
+// const Clicker = hot(module)(
+//   class extends React.Component {
   class Clicker extends React.Component {
     state = {
       count: 34,
@@ -90,12 +93,13 @@ import ReactDOM from 'react-dom';
           }}
         >
           <h1>Count: {count}</h1>
-          <button onClick = { this.inc }>Increment</button>
-          <button onClick = { this.dec }>Decrement</button>
+          <button onClick = { this.inc }>Inc</button>
+          <button onClick = { this.dec }>Dec</button>
         </section>
       );
     }
   }
+  // );
 
   ReactDOM.render(
     <Clicker/>,

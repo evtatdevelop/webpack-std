@@ -1,6 +1,5 @@
-// Дополнительные настройки на клиенте для hotreloading (РАБОТАЕТ БЕЗ НИХ)
+// Core
 const { HotModuleReplacementPlugin } = require('webpack');
-
 const { merge } = require('webpack-merge');
 
 // Configurations
@@ -8,12 +7,12 @@ const getCommonConfig = require('./webpack.common');
 
 module.exports = () => {
   return merge(getCommonConfig(), {
-    mode: 'none',
-    devtool: false,
-    // devtool: 'cheap-eval-source-map',
-    entry: [ 'webpack-hot-middleware/client?reload=true&quiet=true' ], // Дополнительные настройки на клиенте для hotreloading (РАБОТАЕТ БЕЗ НИХ)
+    mode: 'development',
+    // devtool: false,
+    devtool: 'cheap-module-source-map',
+    entry: [ 'webpack-hot-middleware/client?reload=true&quiet=true' ],
     plugins: [
-      new HotModuleReplacementPlugin(), // Дополнительные настройки на клиенте для hotreloading (РАБОТАЕТ БЕЗ НИХ)
+      new HotModuleReplacementPlugin(),
     ],
   });
 };

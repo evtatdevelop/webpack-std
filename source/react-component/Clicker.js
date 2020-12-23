@@ -16,6 +16,8 @@ class Clicker extends React.Component {
   render() {
     const { count } = this.state;
 
+// throw new Error('Boom!');
+
     return (
       <section
         className={Styles.clicker}
@@ -25,8 +27,8 @@ class Clicker extends React.Component {
         }}
       >
         <h1>Count: {count}</h1>
-        <button onClick = { this.inc }>Inc</button>
-        <button onClick = { this.dec }>Dec</button>
+        <button onClick = { this.inc }>Inc+</button>
+        <button onClick = { this.dec }>Dec-</button>
       </section>
     );
   }

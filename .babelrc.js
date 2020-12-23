@@ -23,7 +23,7 @@ module.exports = (api) => {
       ],
     ],
     // plugins: ['@babel/proposal-class-properties'],
-    plugins: plugins,
-    // plugins,
+    // plugins: plugins,
+    plugins,
   };
 };

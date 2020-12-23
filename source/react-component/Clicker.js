@@ -4,6 +4,7 @@ import React from 'react';
 
 Styles
 import Styles from './postcss.css';
+import kitty from '../theme/images/kitty.jpg';
 
 class Clicker extends React.Component {
   state = {
@@ -26,6 +27,7 @@ class Clicker extends React.Component {
            '--headingFontSize': this.state.count + 'px',
         }}
       >
+        <img src = {kitty} />
         <h1>Count: {count}</h1>
         <button onClick = { this.inc }>Inc+</button>
         <button onClick = { this.dec }>Dec-</button>

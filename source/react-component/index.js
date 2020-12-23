@@ -1,10 +1,10 @@
 // // Core
 // import React, { Component } from 'react';
 // import { render } from 'react-dom';
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 
-Styles
-import Styles from './postcss.css';
+// Styles
+// import Styles from './postcss.css';
 
 // const Clicker = hot(module)(
 //   class extends Component {
@@ -48,6 +48,8 @@ import Styles from './postcss.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Clicker from './Clicker';
+
 // class HelloMessage extends React.Component {
 //   render() {
 //     return (
@@ -64,42 +66,37 @@ import ReactDOM from 'react-dom';
 // );
 
 
-// const Clicker = hot(module)(
-//   class extends React.Component {
-  class Clicker extends React.Component {
-    state = {
-      count: 34,
-    };
+// // const Clicker = hot(module)(
+// //   class extends React.Component {
+//   class Clicker extends React.Component {
+//     state = {
+//       count: 34,
+//     };
 
-    inc = () =>
-      void this.setState(({ count }) => ({
-        count: count + 1,
-      }));
+//     inc = () => void this.setState(({ count }) => ({ count: count + 1 }));
+//     dec = () => void this.setState(({ count }) => ({ count: count - 1 }));
 
-    dec = () =>
-      void this.setState(({ count }) => ({
-        count: count - 1,
-      }));
+//     render() {
+//       const { count } = this.state;
 
-    render() {
-      const { count } = this.state;
+//       return (
+//         <section
+//           className={Styles.clicker}
+//           style = {{
+//              '--mainColor': 'rebeccapurple',
+//              '--headingFontSize': this.state.count + 'px',
+//           }}
+//         >
+//           <h1>Count: {count}</h1>
+//           <button onClick = { this.inc }>Inc!</button>
+//           <button onClick = { this.dec }>Dec!</button>
+//         </section>
+//       );
+//     }
+//   }
+//   // );
 
-      return (
-        <section
-          className={Styles.clicker}
-          style = {{
-             '--mainColor': 'rebeccapurple',
-             '--headingFontSize': this.state.count + 'px',
-          }}
-        >
-          <h1>Count: {count}</h1>
-          <button onClick = { this.inc }>Inc</button>
-          <button onClick = { this.dec }>Dec</button>
-        </section>
-      );
-    }
-  }
-  // );
+// export default hot(Clicker);
 
   ReactDOM.render(
     <Clicker/>,

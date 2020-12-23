@@ -9,7 +9,8 @@ const getCommonConfig = require('./webpack.common');
 module.exports = () => {
   return merge(getCommonConfig(), {
     mode: 'none',
-    devtool: false, // TODO: Make source maps
+    devtool: false,
+    // devtool: 'cheap-eval-source-map',
     entry: [ 'webpack-hot-middleware/client?reload=true&quiet=true' ], // Дополнительные настройки на клиенте для hotreloading (РАБОТАЕТ БЕЗ НИХ)
     plugins: [
       new HotModuleReplacementPlugin(), // Дополнительные настройки на клиенте для hotreloading (РАБОТАЕТ БЕЗ НИХ)

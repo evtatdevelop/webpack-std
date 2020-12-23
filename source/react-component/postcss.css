@@ -3,11 +3,20 @@
   --headingFontSize: 34px;
   color: var(--mainColor);
 
+  & img {
+    border-radius: 50%;
+    /* border: 2px solid var(--color1); */
+    border: 2px solid #E60E63;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 25px;
+  }
+
   & h1 {
     font-size: var(--headingFontSize);
   }
 
-  & button {
+  /* & button {
     height: 30px;
     width: 150px;
     border: 1px solid black;
@@ -16,7 +25,7 @@
     font-size: 20px;
     cursor: pointer;
     outline: 0;
-  }
+  } */
 
   @media (--phonePortrait) {
     color: red;

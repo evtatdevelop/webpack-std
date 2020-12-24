@@ -26,6 +26,7 @@ export default () => {
     modules.loadJavaScript(),
     modules.loadCss(),
     modules.loadImages(),
+    modules.loadSvg(),
     modules.setupHtml(),
   );
 };

@@ -5,6 +5,11 @@ import React from 'react';
 Styles
 import Styles from './postcss.css';
 import kitty from '../theme/images/kitty.jpg';
+// import { ReactComponent as ReactLogoComponent } from '../theme/images/react.svg';
+// import reactLogo from '../theme/images/react.svg';
+
+// console.log(ReactLogoComponent);
+// console.log(reactLogo);
 
 import { Button } from './Button';
 
@@ -29,6 +34,8 @@ class Clicker extends React.Component {
            '--headingFontSize': this.state.count + 'px',
         }}
       >
+        {/* <ReactLogoComponent /> */}
+        {/* <img src = { reactLogo } /> */}
         <img src = {kitty} />
         <h1>Count: {count}</h1>
         <Button onClick = { this.inc }>Inc+</Button>

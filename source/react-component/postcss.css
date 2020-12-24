@@ -14,7 +14,14 @@
 
   & h1 {
     font-size: var(--headingFontSize);
-    /* background-image: url('../../theme/image/react.svg'); */
+    background-image: url('../theme/images/approved.svg');
+    width: 150px;
+    background-repeat: no-repeat;
+    background-position: 40px 50%;
+    background-size: contain;
+    text-align: left;
+    padding-left: 100px;
+    width: max-content;
   }
 
   /* & button {

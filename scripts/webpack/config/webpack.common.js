@@ -1,5 +1,5 @@
 // Core
-import webpack from 'webpack';
+// import webpack from 'webpack';
 import merge from 'webpack-merge';
 
 // Constants
@@ -17,11 +17,11 @@ export default () => {
         path: BUILD_DIRECTORY,
         filename: 'bundle.js',
       },
-      plugins: [
-        new webpack.ProvidePlugin({
-          process: 'process/browser',
-        }),
-      ],
+      // plugins: [
+      //   new webpack.ProvidePlugin({
+      //     process: 'process/browser',
+      //   }),
+      // ],
     },
     modules.loadJavaScript(),
     modules.loadCss(),

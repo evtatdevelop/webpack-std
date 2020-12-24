@@ -38,33 +38,33 @@ export const loadSvg = () => ({
     rules: [
       {
         test: /\.svg$/,
-      //   issuer: {
-      //     test: /\.js$/,
-      //   },
+        issuer: {
+          test: /\.js$/,
+        },
         use: [
           '@svgr/webpack',
-          // {
-          //   loader: 'file-loader',
-      //       options: {
-      //         name: './images/[name].[ext]',
-      //       },
-          // },
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]',
+            },
+          },
         ],
       },
-      // {
-      //   test: /\.svg$/,
-      //   issuer: {
-      //     test: /\.css$/,
-      //   },
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: './images/[name].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.svg$/,
+        issuer: {
+          test: /\.css$/,
+        },
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 });

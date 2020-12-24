@@ -6,7 +6,7 @@ Styles
 import Styles from './postcss.css';
 import kitty from '../theme/images/kitty.jpg';
 // import { ReactComponent as ReactLogoComponent } from '../theme/images/react.svg';
-import ReactLogo from '../theme/images/react.svg';
+import ReactApp from '../theme/images/react.svg';
 
 // console.log(ReactLogoComponent);
 // console.log(reactLogo);
@@ -34,8 +34,8 @@ class Clicker extends React.Component {
            '--headingFontSize': this.state.count + 'px',
         }}
       >
-        <ReactLogo />
-        {/* <ReactLogoComponent /> */}
+        <ReactApp viewBox={"0 0 256 230"} width={100} />
+        {/* <ReactLogoComponent width = { 50 } /> */}
         {/* <img src = { reactLogo } /> */}
         <img src = {kitty} />
         <h1>Count: {count}</h1>

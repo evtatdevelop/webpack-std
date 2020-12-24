@@ -43,12 +43,12 @@ export const loadSvg = () => ({
       //   },
         use: [
           '@svgr/webpack',
-      //     {
-      //       loader: 'file-loader',
+          // {
+          //   loader: 'file-loader',
       //       options: {
       //         name: './images/[name].[ext]',
       //       },
-      //     },
+          // },
         ],
       },
       // {

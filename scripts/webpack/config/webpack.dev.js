@@ -6,7 +6,7 @@ const { merge } = require('webpack-merge');
 const getCommonConfig = require('./webpack.common');
 
 module.exports = () => {
-  return merge(getCommonConfig(), {
+  return merge(getCommonConfig.default(), {
     mode: 'development',
     // devtool: false,
     devtool: 'cheap-module-source-map',

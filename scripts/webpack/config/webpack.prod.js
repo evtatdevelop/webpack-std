@@ -15,7 +15,7 @@ const cleanOptions = {
 
 module.exports = () => {
 
-  return merge(getCommonConfig(), {
+  return merge(getCommonConfig.default(), {
     mode: 'none',
     devtool: false,
     plugins: [

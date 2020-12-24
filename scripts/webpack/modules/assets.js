@@ -36,21 +36,21 @@ export const loadImages = () => ({
 export const loadSvg = () => ({
   module: {
     rules: [
-      // {
-      //   test: /\.svg$/,
+      {
+        test: /\.svg$/,
       //   issuer: {
       //     test: /\.js$/,
       //   },
-      //   use: [
-      //     '@svgr/webpack',
+        use: [
+          '@svgr/webpack',
       //     {
       //       loader: 'file-loader',
       //       options: {
       //         name: './images/[name].[ext]',
       //       },
       //     },
-      //   ],
-      // },
+        ],
+      },
       // {
       //   test: /\.svg$/,
       //   issuer: {

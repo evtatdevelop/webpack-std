@@ -1,7 +1,7 @@
 .clicker {
   --mainColor: wheat;
   --headingFontSize: 34px;
-  color: var(--mainColor);
+  /* color: var(--mainColor); */
 
   & img {
     border-radius: 50%;
@@ -14,7 +14,7 @@
 
   & h1 {
     font-size: var(--headingFontSize);
-    background-image: url('../theme/images/approved.svg');
+    background-image: url('../theme/images/react.svg');
     width: 150px;
     background-repeat: no-repeat;
     background-position: 40px 50%;

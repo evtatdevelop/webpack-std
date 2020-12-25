@@ -1,5 +1,4 @@
 //  Core
-// import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export const setupHtml = () => ({
@@ -9,9 +8,6 @@ export const setupHtml = () => ({
       title: 'Learning WebPack!👀!',
       favicon: './static/favicon.ico',
     }),
-    // new webpack.ProvidePlugin({
-    //   process: 'process/browser',
-    // }),
   ],
 });
 
@@ -61,6 +57,24 @@ export const loadSvg = () => ({
             loader: 'file-loader',
             options: {
               name: './images/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
+  },
+});
+
+export const loadFonts = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.woff2$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './fonts/[name].[ext]',
             },
           },
         ],

@@ -4,12 +4,13 @@
   margin-right: 5px;
   border: 1px solid red;
   border-radius: 7px;
-  background-color: var(--color2, 'wheat');
+  /* background-color: var(--color2, 'wheat'); */
+  background-color: #FFF;
   background-image: url('../../theme/images/pointer-icon.png');
   background-size: 30px;
   background-position: 5px 50%;
   background-repeat: no-repeat;
-  color: var(--color1);
+  /* color: var(--color1); */
   font-size: 20px;
   cursor: pointer;
   outline: 0;

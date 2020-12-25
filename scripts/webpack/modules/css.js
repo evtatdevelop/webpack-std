@@ -1,50 +1,59 @@
 // Core
 import env from 'postcss-preset-env';
 import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
+import cssnano from 'cssnano';
 
 const loadPostcss = (
   { sourceMap = false, minify = false } = { sourceMap: false, minify: false }
-) => ({
+) => {
+  const plugins = [
+    // plugins chain
+
+    env({
+      stage: 0,
+      features: {
+        'custom-media-queries': {
+          importFrom: [
+            {
+              customMedia: {
+                '--phonePortrait':
+                  '(width <= 414px)',
+                '--phoneLandscape':
+                  '(width >= 415px) and (width <= 667px)',
+                '--tabletPortrait':
+                  '(width >= 668px) and (width <= 768px)',
+                '--tabletLandscape':
+                  '(width >= 769px) and (width <= 1024px)',
+                '--desktopS':
+                  '(width >= 1025px) and (width <= 1366px)',
+                '--desktopM':
+                  '(width >= 1367px) and (width <= 1680px)',
+                '--desktopL':
+                  '(width >= 1681px) and (width <= 1920px)',
+                '--desktopXL':
+                  '(width >= 1921px)',
+              },
+            },
+          ],
+        },
+      },
+    }),
+  ];
+
+  if (minify) {
+    plugins.push(cssnano);
+  }
+
+  return {
     loader: 'postcss-loader',
     options: {
       postcssOptions: {
         sourceMap,
-        plugins: [
-          // plugins
-
-          env({
-            stage: 0,
-            features: {
-              'custom-media-queries': {
-                importFrom: [
-                  {
-                    customMedia: {
-                      '--phonePortrait':
-                        '(width <= 414px)',
-                      '--phoneLandscape':
-                        '(width >= 415px) and (width <= 667px)',
-                      '--tabletPortrait':
-                        '(width >= 668px) and (width <= 768px)',
-                      '--tabletLandscape':
-                        '(width >= 769px) and (width <= 1024px)',
-                      '--desktopS':
-                        '(width >= 1025px) and (width <= 1366px)',
-                      '--desktopM':
-                        '(width >= 1367px) and (width <= 1680px)',
-                      '--desktopL':
-                        '(width >= 1681px) and (width <= 1920px)',
-                      '--desktopXL':
-                        '(width >= 1921px)',
-                    },
-                  },
-                ],
-              },
-            },
-          }),
-        ],
+        plugins,
       },
     },
-});
+  }
+};
 
 const loadCss = ({ sourceMap = false } = { sourceMap: false }) => ({
   loader: 'css-loader',
@@ -63,7 +72,7 @@ export const loadDevCss = () => ({
         use: [
           'style-loader',
           loadCss({ sourceMap: true }),
-          loadPostcss({ sourceMap: true }),
+          loadPostcss({ sourceMap: true, minify: false }),
         ],
       },
     ],
@@ -78,7 +87,7 @@ export const loadProdCss = () => ({
         use: [
           MiniCssExtractPlugin.loader,
           loadCss({ sourceMap: false }),
-          loadPostcss({ sourceMap: false }),
+          loadPostcss({ sourceMap: false, minify: true }),
         ],
       },
     ],

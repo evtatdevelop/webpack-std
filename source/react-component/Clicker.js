@@ -4,6 +4,8 @@ import React from 'react';
 
 Styles
 import Styles from './postcss.css';
+import Sass from './styles.scss';
+import Less from './styles.less';
 import kitty from '../theme/images/kitty.jpg';
 import { ReactComponent as ReactLogoComponent } from '../theme/images/react.svg';
 import reactLogo from '../theme/images/react.svg';
@@ -39,6 +41,10 @@ class Clicker extends React.Component {
         <img src = { reactLogo } />
         <img src = {kitty} />
         <h1>Count: {count}</h1>
+        <div style = {{'display': 'flex'}}>
+          <p className={Sass.test}>Sass testing</p>
+          <p className={Less.test}>Less testing</p>
+        </div>
         <Button onClick = { this.inc }>Inc+</Button>
         <Button onClick = { this.dec }>Dec-</Button>
       </section>

@@ -25,6 +25,8 @@ export default () => {
     },
     modules.loadJavaScript(),
     modules.loadCss(),
+    modules.loadSass(),
+    modules.loadLess(),
     modules.loadFonts(),
     modules.loadImages(),
     modules.loadSvg(),

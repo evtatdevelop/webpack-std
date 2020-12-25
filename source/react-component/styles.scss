@@ -1,0 +1,5 @@
+.test {
+  $test: green;
+
+  color: $test !important;
+}

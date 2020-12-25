@@ -62,3 +62,46 @@ export const loadCss = () => ({
   },
 });
 
+export const loadSass = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              // localIdentName:
+              //   '[path][name]__[local]--[hash:base64:5]',
+            },
+          },
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+});
+
+export const loadLess = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              // localIdentName:
+              //   '[path][name]__[local]--[hash:base64:5]',
+            },
+          },
+          'less-loader',
+        ],
+      },
+    ],
+  },
+});

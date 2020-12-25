@@ -15,7 +15,8 @@ export default () => {
       entry: [ SOURCE_DIRECTORY ],
       output: {
         path: BUILD_DIRECTORY,
-        filename: 'bundle.js',
+        // filename: 'bundle.js',
+        filename: 'js/bundle.js',
       },
       // plugins: [
       //   new webpack.ProvidePlugin({
@@ -24,7 +25,7 @@ export default () => {
       // ],
     },
     modules.loadJavaScript(),
-    modules.loadCss(),
+    // modules.loadCss(),
     modules.loadSass(),
     modules.loadLess(),
     modules.loadFonts(),

@@ -1,12 +1,16 @@
+// Core
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
+
+// Constats
+const { PROJECT_ROOT, BUILD_DIRECTORY } = require('../constans');
 
 // Configurations
 const getCommonConfig = require('./webpack.common');
 
-const {
-  PROJECT_ROOT
-} = require('../constans');
+// Modules
+import * as modules from '../modules';
+
 
 const cleanOptions = {
   verbose: true,
@@ -15,11 +19,16 @@ const cleanOptions = {
 
 module.exports = () => {
 
-  return merge(getCommonConfig.default(), {
-    mode: 'none',
-    devtool: false,
-    plugins: [
-      new CleanWebpackPlugin(cleanOptions),
-    ],
-  });
+  return merge(
+    getCommonConfig.default(),
+    {
+      mode: 'none',
+      devtool: false,
+      plugins: [
+        new CleanWebpackPlugin(cleanOptions),
+        // new CleanWebpackPlugin([ BUILD_DIRECTORY ], cleanOptions),
+      ],
+    },
+    modules.loadProdCss(),
+  );
 };

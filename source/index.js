@@ -20,5 +20,18 @@ import './theme/main.css';
 
 // import './simple-components/javascript';
 
+// if (process.env.NODE_ENV === 'development') {
+//   console.log('-> development');
+// }
+
+console.log('__ENV__', __ENV__);
+console.log('__DEV__', __DEV__);
+console.log('__STAGE__', __STAGE__);
+console.log('__PROD__', __PROD__);
+
+// if (__DEV__) {
+// }
+// if (__PROD__) {
+// }
 
 import './react-component';

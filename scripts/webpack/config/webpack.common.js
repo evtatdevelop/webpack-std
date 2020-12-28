@@ -17,6 +17,7 @@ export default () => {
         path: BUILD_DIRECTORY,
         // filename: 'bundle.js',
         filename: 'js/bundle.js',
+        publicPath: '/', // FIXING Lesson 5 'do not load fonts if make CSS folder in prodaction build'
       },
       // plugins: [
       //   new webpack.ProvidePlugin({

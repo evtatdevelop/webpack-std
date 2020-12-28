@@ -94,8 +94,8 @@ export const loadProdCss = () => ({
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename:       '[name].[id].css',   // !!! Fonts are loading -> building !!!
-      // filename:       'css/[name].[id].css',  // !!! Fonts are not loading -> building !!!
+      // filename:       '[name].[id].css',   // !!! Fonts are loading -> building !!!
+      filename:       'css/[name].[id].css',  // !!! Fonts are not loading -> building !!!
       chunkFilename:  'css/[name].[id].css',
     }),
   ],

@@ -1,6 +1,8 @@
 // Core
 // import webpack from 'webpack';
 import { DefinePlugin } from "webpack";
+import WebpackBar from 'webpackbar';
+var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 import merge from "webpack-merge";
 
 // Constants
@@ -31,6 +33,24 @@ export default () => {
           __DEV__: NODE_ENV === "development",
           __STAGE__: NODE_ENV === "stage",
           __PROD__: NODE_ENV === "prodaction",
+        }),
+        new WebpackBar(),
+        new FriendlyErrorsWebpackPlugin({
+          compilationSuccessInfo: {
+            messages: ['You application is running here http://localhost:3000'],
+            notes: ['Some additionnal notes to be displayed unpon successful compilation']
+          },
+          onErrors: function (severity, errors) {
+            // You can listen to errors transformed and prioritized by the plugin
+            // severity can be 'error' or 'warning'
+          },
+          // should the console be cleared between each compilation?
+          // default is true
+          clearConsole: true,
+
+          // add formatters and transformers (see below)
+          additionalFormatters: [],
+          additionalTransformers: []
         }),
       ],
     },

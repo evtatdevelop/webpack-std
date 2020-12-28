@@ -30,5 +30,6 @@ module.exports = () => {
       ],
     },
     modules.loadProdCss(),
+    // modules.optimizeImages(),
   );
 };

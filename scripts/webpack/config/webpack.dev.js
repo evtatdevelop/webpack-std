@@ -1,6 +1,5 @@
 // Core
-const { HotModuleReplacementPlugin } = require('webpack');
-const { merge } = require('webpack-merge');
+import merge from 'webpack-merge';
 
 // Configurations
 const getCommonConfig = require('./webpack.common');
@@ -13,13 +12,11 @@ module.exports = () => {
     getCommonConfig.default(),
     {
       mode: 'development',
-      // devtool: false,
       devtool: 'cheap-module-source-map',
       entry: [ 'webpack-hot-middleware/client?reload=true&quiet=true' ],
-      plugins: [
-        new HotModuleReplacementPlugin(),
-      ],
     },
+    modules.connectHMR(),
+    modules.connectFriendlyErrors(),
     modules.loadDevCss(),
   );
 };

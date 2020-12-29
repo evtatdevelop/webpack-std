@@ -13,11 +13,13 @@ module.exports = () => {
     getCommonConfig.default(),
     {
       mode: 'none',
+      // mode: 'production',  // NODE_ENV = 'production'
       devtool: false,
     },
     modules.cleanDirectories(),
     modules.connectBuildProgressIndicator(),
     modules.loadProdCss(),
     // modules.optimizeImages(),
+    modules.conectBundleAnalyzer(),
   );
 };

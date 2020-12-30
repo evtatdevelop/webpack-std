@@ -34,6 +34,7 @@ export default () => {
     modules.loadFonts(),
     modules.loadImages(),
     modules.loadSvg(),
-    modules.setupHtml()
+    modules.setupHtml(),
+    modules.filterMomentLocales(),
   );
 };

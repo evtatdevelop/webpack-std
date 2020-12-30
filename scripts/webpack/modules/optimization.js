@@ -1,3 +1,4 @@
+import { ContextReplacementPlugin } from 'webpack';
 // import ImageminPlugin from 'imagemin-webpack';
 // import imageminMozjpeg from 'imagemin-mozjpeg';
 // import imageminPngquant from 'imagemin-pngquant';
@@ -80,3 +81,11 @@ export const optimizeBuild = () => ({
 //     }),
 //   ],
 // });
+
+export const filterMomentLocales = () => ({
+  plugins: [ new ContextReplacementPlugin(
+      /moment[/\\]locale$/,
+      /en|ru/
+    ),
+  ],
+});

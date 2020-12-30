@@ -24,6 +24,7 @@
   "homepage": "https://github.com/evtatdevelop/webpack-std#readme",
   "dependencies": {
     "core-js": "^3.8.1",
+    "lodash-es": "^4.17.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

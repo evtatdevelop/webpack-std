@@ -17,6 +17,10 @@ export default () => {
       output: {
         path: BUILD_DIRECTORY,
         filename: "js/bundle.js",
+        // filename: "js/[name].[contenthash:5].[id]",      // Error compilation
+        // chunkFilename: "js/[name].[chunkhash:5].[id]",   // Error compilation
+        // filename: "js/[name].[hash:5].[id]",
+        // chunkFilename: "js/[name].[hash:5].[id]",
         publicPath: "/", // FIXING Lesson 5 'do not load fonts if make CSS folder in prodaction build'
       },
       plugins: [

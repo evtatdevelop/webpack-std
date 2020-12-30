@@ -1,15 +1,15 @@
-import { update } from 'lodash-es';
+// import { update } from 'lodash-es';
 
-console.log(update);
+// console.log(update);
 
 // import moment from 'moment';
 // const now = moment.now();
 
-// import component from './simple-components/dom';
+import component from './simple-components/dom';
 import './theme/main.css';
 
-// let element = component();
-// document.body.appendChild(element);
+let element = component();
+document.body.appendChild(element);
 
 // if (module.hot) {
 //   module.hot.accept('./simple-components/dom', function() {

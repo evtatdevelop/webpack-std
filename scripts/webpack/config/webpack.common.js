@@ -10,18 +10,23 @@ import * as modules from "../modules";
 
 export default () => {
   const { NODE_ENV } = process.env;
+  const IS_DEV = NODE_ENV === 'development';
 
   return merge(
     {
       entry: [ SOURCE_DIRECTORY ],
       output: {
         path: BUILD_DIRECTORY,
-        filename: "js/bundle.js",
-        // filename: "js/[name].[contenthash:5].[id]",      // Error compilation
-        // chunkFilename: "js/[name].[chunkhash:5].[id]",   // Error compilation
-        // filename: "js/[name].[hash:5].[id]",
-        // chunkFilename: "js/[name].[hash:5].[id]",
-        publicPath: "/", // FIXING Lesson 5 'do not load fonts if make CSS folder in prodaction build'
+        // filename: "js/bundle.js",
+        filename: 'js/bundle.[hash:5].js',
+        chunkFilename: 'js/bundle.[chunkhash:5].js',
+        // filename: IS_DEV
+        //   ? 'js/[name].[hash].[id].js'
+        //   : 'js/[name].[contenthash:5].[id].js',
+        // chunkFilename: IS_DEV
+        //   ? 'js/[name].[hash].[id].js'
+        //   : 'js/[name].[chunkhash:5].[id].js',
+        // publicPath: "/", // FIXING Lesson 5 'do not load fonts if make CSS folder in prodaction build'
       },
       plugins: [
         new DefinePlugin({

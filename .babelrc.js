@@ -23,6 +23,7 @@ module.exports = (api) => {
           spec: true,
           loose: false,
           modules: false,
+          // useBuiltIns: 'usage',
         },
       ],
     ],

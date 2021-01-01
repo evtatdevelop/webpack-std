@@ -23,7 +23,7 @@ module.exports = (api) => {
           spec: true,
           loose: false,
           modules: false,
-          // useBuiltIns: 'usage',
+          // useBuiltIns: 'usage', // Загружает только нужные полифилы (ERROR Compilation)
         },
       ],
     ],

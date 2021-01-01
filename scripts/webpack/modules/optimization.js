@@ -110,7 +110,7 @@ export const optimizeBuild = () => ({
       },
     },
     // Выносит webpack runtime каждого entrypoint в отдельный чанкю fakse по-умолчанию
-    runtimeChunk: false,
+    runtimeChunk: true,
   },
 });
 

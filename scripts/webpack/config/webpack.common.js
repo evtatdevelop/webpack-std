@@ -20,11 +20,11 @@ export default () => {
         // filename: "js/bundle.js",
         // filename: 'js/bundle.[hash:5].js',
         filename: IS_DEV
-          ? 'js/bundle.[hash:5].chunk.js'
-          : 'js/bundle.[chunkhash:5].bundle.js',
-        chunkFilename: 'js/bundle.[chunkhash:5].chunk.js',
+          ? 'js/bundle.[hash].chunk.js'
+          : 'js/bundle.[chunkhash].bundle.js',
+        chunkFilename: 'js/bundle.[chunkhash].chunk.js',
         publicPath: "/", // FIXING Lesson 5 'do not load fonts if make CSS folder in prodaction build'
-        // hashDigestLengt: 5,
+        hashDigestLength: 5,
       },
       plugins: [
         new DefinePlugin({
